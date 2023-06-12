@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UX-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Memory Bridge</title>
+        <link rel="shortcut icon" href="resource/bridge.png" />
+        <link rel="stylesheet" href="./nav.css">
+        <link rel="stylesheet" href="./cloud.css">
+        <link rel="stylesheet" href="./fence.css">
+        <link rel="stylesheet" href="./background.css">
+
+    </head>
+
+    <body>
+        <!-- test -->
+        <!-- <H2 id="statistic"> Helloworld</H2>  -->
+
+        <div id="day"></div>
+        <div id="noon"></div>
+        <div id="sunset"></div>
+        <div id="night"></div>
+        <div class="suncontainer">
+            <div id="sun"></div>
+        </div>
+        
+
+        <!-- Water Filter -->
+        <svg >
+            <filter id="water-filter">
+            <feTurbulence id="feTurb" type="fractalNoise" 
+                baseFrequency="0.02 0.05" numOctaves="3" />
+            <animate xlink:href="#feTurb" attributeName="baseFrequency" 
+                dur="30s" keyTimes="0;0.5;1" values="0.02 0.08;0.02 0.05;0.02 0.08" repeatCount="indefinite"/>
+            <!-- Remove Displacement Map for Noise Texture -->
+            <feDisplacementMap id="feDisp" in="SourceGraphic" scale="60" />
+            </filter>
+        </svg>
+
+        <!-- <div id="moon"></div> -->
+        <div id="clouds"></div>
+
+        <div class="nav">
+            <a href="shop.html" target="_blank"><H2 class="title">Virtual Romantic Bridge</H2></a>
+            <a class="button" id="connectButton">
+                <img class="icon" src="resource/metamask.svg" alt="metamask">
+                <span class="wallet" id="buttonText">Connect wallet</span>
+            </a>
+        </div>
+
+        <div id="scrollablebackground">
+            <div class="container">
+                <!-- sample image -->
+                <img class="background" src="resource/city3.png" alt="sample_city">
+                <img class="background" src="resource/city3.png" alt="sample_city">
+                <img class="background" id="river" src="resource/city3.png" alt="sample_city">
+                <img class="background" src="resource/city3.png" alt="sample_city">
+                <img class="background" src="resource/city3.png" alt="sample_city">
+            </div>
+        </div>
+
+        <div id="scrollablebridge"><div id="bridge">
+
+        </div>
+        </div>
+        <img id="padlock"src="resource/padlock.png" alt="padlock">
+
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script> -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script> -->
+        <script type="module" src="./metamask.js"></script>
+        <script src="./scroll.js"></script>
+        <script src="./bridge.js"></script>
+
+</body>
+</html>
